@@ -1,0 +1,17 @@
+.FWContainer {
+    height: 10%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+    scroll-behavior: smooth;
+    background-color: #f0f0f0; /* 背景画像がない場合のフォールバック色 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.responsiveImage {
+    width: 100%; /* 親要素の幅に合わせる */
+    height: auto; /* アスペクト比を維持 */
+    display: block; /* 不要な余白を削除 */
+}

@@ -1,0 +1,86 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-logo {
+
+    margin-left: 20px;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: black; /* トグルボタンの色を黒に変更 */
+  font-size: 2.25rem;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 40px; /* 右から20pxに固定 */
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  display: inline;
+}
+
+.navbar-link {
+  color: black !important; /* フォントカラーを黒に変更 */
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+}
+
+/* Small screen adjustments */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-item {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}

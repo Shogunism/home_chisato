@@ -1,0 +1,283 @@
+@font-face {
+  font-family: 'Nikoleta';
+  src: url('/fonts/NIKOLETA.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nikoleta-font {
+  font-family: 'Nikoleta', sans-serif;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/static/Roboto_Condensed-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.roboto-font {
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  background-color: #2c2c2c; /* 背景色を黒に設定 */
+  color: #ffffff; /* 文字色を白に設定 */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #111;
+  color: #fff;
+  padding: 1rem;
+}
+
+header nav a {
+  color: #fff;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+main {
+  padding: 2rem;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.header-string {
+  font-size: 6em; /* フォントサイズを変更 */
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.5em; /* フォントサイズを変更 */
+  margin: 0;
+}
+
+a {
+  text-decoration: none; /* アンダーラインを消す */
+  color: #ffffff; /* 通常のリンクの色 */
+}
+
+a:visited {
+  color: #ffffff; /* クリック後のリンクの色 */
+}
+
+a:hover {
+  color: #cccccc; /* ホバー時のリンクの色 */
+}
+
+a:active {
+  color: #999999; /* アクティブ時のリンクの色 */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  background-color: #2c2c2c;
+}
+
+.nav_string {
+  text-decoration: none; /* アンダーラインを消す */
+  color: #ffffff !important; 
+  margin: 0 75px; /* リンク間の余白を設定 */
+  font-size: 2em;
+  position: relative; /* 擬似要素の位置を相対的に設定 */
+}
+
+.nav_string::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+
+.nav_string::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  color: #000000;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease;
+  z-index: 2; /* アンダーラインの上に表示 */
+}
+
+
+.nav_string.left-to-right::before {
+  left: 0;
+}
+
+.nav_string.right-to-left::before {
+  right: 0;
+}
+
+.nav_string.left-to-right:hover::before,
+.nav_string.left-to-right:hover::after {
+  width: 100%;
+}
+
+.nav_string.right-to-left:hover::before,
+.nav_string.right-to-left:hover::after {
+  width: 100%;
+}
+
+.nav_string.active::before,
+.nav_string.active::after {
+  width: 100%;
+}
+
+.work-string{
+  margin: 0 50% 0 0 ;
+}
+
+.minecraft_pics img {
+  filter: saturate(40%); /* 彩度を30%に設定 */
+  border-radius: 50%; /* 画像を丸く面取り */
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  height: 550px;
+  margin-top: -20px; /* Navの高さに合わせて調整 */
+}
+
+.header-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  object-fit: cover; /* 動画をコンテナに合わせてカバー */
+  z-index: 1;
+  
+}
+
+.header-content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  z-index: 2;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .nav_string {
+    margin: 0 20px;
+    font-size: 27px; 
+  }
+
+  .header-string {
+    font-size: 4em; /* フォントサイズを変更 */
+  }
+  
+  .subtitle {
+    font-size: 1em;
+  }
+
+  .header {
+    height: 350px; /* ヘッダーの高さを変更 */
+  }
+
+  .header-video {
+    height: 400px; /* 動画の高さを変更 */
+  }
+}
+
+@media (max-width: 600px) {
+  .nav_string {
+    margin: 0 10px;
+    font-size: 20px; 
+  }
+
+  .header-string {
+    font-size: 2em; /* フォントサイズを変更 */
+  }
+  
+  .subtitle {
+    font-size: 0.8em;
+    margin-bottom: -100px;
+  }
+
+  .header {
+    height: 250px; /* ヘッダーの高さを変更 */
+  }
+
+  .header-video {
+    height: 300px; /* 動画の高さを変更 */
+  }
+
+  .header-content {
+    font-size: 15px;
+  }
+}
+
+/* フッターのスタイル */
+.footer {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 100px 10;
+  position: relative; /* 必要に応じて調整 */
+  z-index: 2; /* 背景より手前に表示 */
+}
+
+.footer-icons a {
+  margin: 0 20px; /* 左右に10pxの間隔を追加 */
+  display: inline-block; /* アイコンをインラインブロック要素として扱う */
+}
+
+
+.box1 {
+  padding: 0.1em 1.0em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #ffffff;/*文字色*/
+  border: solid 3px #ffffff;/*線*/
+  border-radius: 1vw;/*角の丸み*/
+}
+
+.box1 {
+  margin: 10px; 
+  padding: 5px;
+}
+
+.box1:hover{
+  color: #dddddd; /* ホバー時の背景色 */
+  border: solid 3px #dddddd;/*線*/
+}
+
+.about-image {
+  flex: 0 0 300px;
+  width: 400% !important;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(250, 0, 0, 1)) !important;
+}

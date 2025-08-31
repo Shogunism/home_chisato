@@ -1,0 +1,231 @@
+/* --- グローバルフォント定義 --- */
+@font-face {
+  font-family: 'Cabin Sketch';
+  src: url('/fonts/CabinSketch-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cabin Sketch';
+  src: url('/fonts/CabinSketch-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Regular (400) */
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  src: url('/fonts/MPLUSRounded1c-Regular.ttf') format('truetype');
+  font-weight: 400; /* または normal */
+}
+
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 400; /* Regularを基本の太さに */
+}
+
+/* 見出しの太さを変更する例 */
+h1 {
+  font-weight: 900; /* Black */
+}
+
+h2 {
+  font-weight: 700; /* Bold */
+}
+
+/* 特定のクラスに適用する例 */
+.light-text {
+  font-weight: 300; /* Light */
+}
+
+/* --- ベーススタイル --- */
+html, body {
+  background: linear-gradient(to bottom, #2b77c9 0%, #85aacb 100%);
+  background-attachment: fixed;
+  color: #0c0c0c;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  z-index: 100;
+}
+
+/* --- リンク・テキスト --- */
+a { text-decoration: none; color: #ffffff; }
+a:visited { color: #ffffff; }
+a:hover { color: #cccccc; }
+a:active { color: #999999; }
+
+/* --- ヘッダー・フッター --- */
+header, footer {
+  background: rgba(0,0,0,0.0);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  justify-content: center;
+}
+.footer-icons a {
+  margin: 0 20px;
+  display: inline-block;
+}
+
+/* --- ロゴ --- */
+.logo {
+  position: relative;
+  display: block;
+  margin: 0px auto;
+  width: 90vh;
+  min-width: 300px;
+  max-width: 90%;
+  z-index: 10;
+  text-align: center;
+}
+
+/* --- ABOUTセクション --- */
+.about-container {
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  width: 80%;
+  max-width: 1280px;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+.title-text {
+  text-align: center;
+  font-family: 'Cabin Sketch', sans-serif;
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 4rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.about-image {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  flex: 1 1 300px;
+}
+.about-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 1 300px;
+  text-align: left;
+  color: #000;
+  gap: 100px;
+}
+.about-description {
+  margin-top: 50px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  background-color: #2c2c2c;
+}
+.nav_string {
+  text-decoration: none;
+  color: #ffffff !important;
+  margin: 0 75px;
+  font-size: 2em;
+  position: relative;
+}
+.nav_string::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+.nav_string::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  color: #000000;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease;
+  z-index: 2;
+}
+.nav_string.left-to-right::before { left: 0; }
+.nav_string.right-to-left::before { right: 0; }
+.nav_string.left-to-right:hover::before,
+.nav_string.left-to-right:hover::after { width: 100%; }
+.nav_string.right-to-left:hover::before,
+.nav_string.right-to-left:hover::after { width: 100%; }
+.nav_string.active::before,
+.nav_string.active::after { width: 100%; }
+
+/* --- その他 --- */
+.work-string { margin: 0 50% 0 0; }
+.minecraft_pics img { filter: saturate(40%); border-radius: 50%; }
+.header { position: relative; z-index: 1; height: 550px; margin-top: -20px; }
+.header-video { position: fixed; top: 0; left: 0; width: 100%; height: 90%; object-fit: cover; z-index: 1; }
+.header-content { position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); color: #ffffff; z-index: 2; text-align: center; }
+.box1 { padding: 0.1em 1.0em; margin: 2em 0; font-weight: bold; color: #ffffff; border: solid 3px #ffffff; border-radius: 1vw; }
+.box1:hover { color: #dddddd; border: solid 3px #dddddd; }
+
+/* --- レスポンシブ --- */
+@media (max-width: 1100px) {
+  .nav_string { margin: 0 20px; font-size: 27px; }
+  .header-string { font-size: 4em; }
+  .subtitle { font-size: 1em; }
+  .header { height: 350px; }
+  .header-video { height: 400px; }
+}
+@media (max-width: 600px) {
+  .nav_string { margin: 0 10px; font-size: 20px; }
+  .header-string { font-size: 2em; }
+  .subtitle { font-size: 0.8em; margin-bottom: -100px; }
+  .header { height: 250px; }
+  .header-video { height: 300px; }
+  .header-content { font-size: 15px; }
+}
+@media (max-width: 768px) {
+  .about-content { flex-direction: column; align-items: center; text-align: center; }
+  .about-description-container { align-items: center; text-align: center; }
+  .footer-content { max-width: 1920px; margin: 0 auto; padding: 0 1rem; background: rgba(0,0,0,0.0); border-radius: 8px; }
+}

@@ -1,0 +1,75 @@
+/* お知らせセクション全体のコンテナ */
+.notice-container {
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  width: 80%;
+  max-width: 1280px;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+
+/* 「お知らせ」のタイトル */
+/* 「お知らせ」のタイトル */
+.notice-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+  
+  padding-top: 20px;   
+}
+
+/* お知らせリスト全体 */
+.notice-list {
+  border-top: 1px solid #ddd;
+}
+
+/* お知らせ一つ一つのアイテム */
+.notice-item {
+  display: flex; /* 日付とタイトルを横並びにする */
+  align-items: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+/* ホバー時のスタイル */
+.notice-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* 日付のスタイル */
+.notice-date {
+  font-size: 0.9rem;
+  color: #555;
+  margin-right: 24px; /* 日付とタイトルの間の余白 */
+  flex-shrink: 0; /* 幅が縮まないようにする */
+}
+
+/* タイトルのスタイル */
+.notice-title {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+  flex-grow: 1; /* 残りの幅をすべて使う */
+}
+
+/* スマホ用のレスポンシブ対応 */
+@media (max-width: 600px) {
+  .notice-item {
+    flex-direction: column; /* 縦並びにする */
+    align-items: flex-start; /* 左寄せ */
+  }
+
+  .notice-date {
+    margin-right: 0;
+    margin-bottom: 8px; /* 日付とタイトルの間の余白 */
+    font-size: 0.8rem;
+  }
+}

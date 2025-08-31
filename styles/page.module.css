@@ -1,0 +1,636 @@
+/* nikoleta-font を適用するクラス */
+.nikoletaFont {
+  font-family: 'Nikoleta', sans-serif;
+  font-size: 16px; /* 必要に応じて調整 */
+  font-weight: 400; /* 必要に応じて調整 */
+  color: #333; /* 必要に応じて調整 */
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/static/Roboto_Condensed-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.robotoFont {
+  font-family: 'Roboto', sans-serif;
+  /* Roboto フォントを適用 */
+  font-weight: 300;
+  /* 太字を設定（必要に応じて変更） */
+  color: #fff;
+  /* テキストの色を白に設定 */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  /* テキストに影を追加 */
+}
+
+/* ギャラリー */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 20px;
+  background-color: #3c3c3c;
+  padding-bottom: 40px;
+}
+
+.galleryItem {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.galleryItem_4 {
+  width: 500px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.galleryItem_3 {
+  width: 500px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.galleryItem_2 {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.galleryItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.galleryItem_2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.galleryItem_3:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.galleryItem_4:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.galleryItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galleryItem_2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galleryItem_3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galleryItem_4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* モーダル */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  max-height: 90%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(252, 252, 252, 0);
+  overflow: auto;
+
+
+}
+
+.modalImageContainer img {
+  max-width: 100%;
+  padding-top: 30px;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.modalCaption {
+  padding-top: 20px;
+  text-align: center;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+/* バツボタンを囲む枠のスタイル */
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  /* 枠の幅 */
+  height: 60px;
+  /* 枠の高さ */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* 薄い白い枠線 */
+  border-radius: 5px;
+  /* 角を少し丸める */
+  cursor: pointer;
+  /* カーソルをポインタに変更 */
+  transition: background-color 0.3s ease;
+  /* 背景色のアニメーション */
+  position: absolute;
+  /* モーダル内で絶対位置に配置 */
+  top: 10px;
+  /* モーダルの上から10px */
+  left: 50px;
+  /* モーダルの右から10px */
+  z-index: 1001;
+  /* 他の要素より前面に表示 */
+}
+
+.iconWrapper:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* ホバー時に背景を薄くする */
+}
+
+/* バツボタンのスタイル */
+.icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.icon span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 23px;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  transform: rotate(0deg);
+  transition: 0.2s ease-in-out;
+}
+
+.icon span:nth-child(1),
+.icon span:nth-child(3) {
+  width: 50%;
+  transform: rotate(45deg);
+}
+
+.icon span:nth-child(1) {
+  left: 3px;
+  top: 15px;
+}
+
+.icon span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.icon span:nth-child(3) {
+  left: 20px;
+  top: 31px;
+}
+
+.icon:hover span:nth-child(1),
+.icon:hover span:nth-child(3) {
+  left: -1px;
+}
+
+.icon:hover span:nth-child(1) {
+  top: 15px;
+  transform: rotate(140deg);
+}
+
+.icon:hover span:nth-child(2) {
+  transform: rotate(0deg);
+}
+
+.icon:hover span:nth-child(3) {
+  top: 31px;
+  transform: rotate(40deg);
+}
+
+.additionalImages {
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.additionalImages img {
+  max-width: 75%;
+  max-height: 600px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* ヘッダー全体のスタイル */
+.Header {
+  padding-top: 0px;
+  display: flex;
+  /* Flexbox を使用 */
+  justify-content: center;
+  /* 水平方向に中央揃え */
+  align-items: center;
+  /* 垂直方向に中央揃え */
+  width: 100%;
+  /* ヘッダーの幅をページ全体に広げる */
+  height: 30%;
+  /* ヘッダーの高さを指定 */
+  padding: 0 auto;
+  /* ページ中央に配置 */
+  position: relative;
+  background-color: #3c3c3c;
+  /* 必要に応じて相対位置を設定 */
+  padding-bottom: 20px;
+}
+
+/* ヘッダー画像のスタイル */
+.HeaderImage {
+  background-color: 3c3c3c;
+  max-width: 90%;
+  /* 画像の幅を最大90%に制限 */
+  height: auto;
+  /* アスペクト比を維持 */
+  object-fit: contain;
+  /* 画像をコンテナ内に収める */
+}
+
+/* h1 タイトルのスタイル */
+.HeaderTitle {
+  position: absolute;
+  /* ヘッダー内で絶対位置に配置 */
+  top: 70%;
+  /* ヘッダーの中央に配置 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 中央揃え */
+  color: #fff;
+  /* テキストの色を白に設定 */
+  font-size: 3rem;
+  /* フォントサイズを設定 */
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.7);
+  /* テキストに影を追加 */
+  z-index: 2;
+  /* 画像の上に表示 */
+}
+
+.skill_fontsize{
+  font-size: 30px;
+}
+
+@media (max-width: 1200px) {
+  .HeaderTitle {
+    font-size: 2.0rem;
+    /* フォントサイズを設定 */
+  }
+
+  .Skill_item {
+    width: 120px !important; /* 必要に応じて幅を調整 */
+  }
+  
+
+}
+
+@media (max-width: 800px) {
+  .HeaderTitle {
+    font-size: 1rem;
+    /* フォントサイズを設定 */
+  }
+
+  .skill_fontsize{
+    font-size: 25px;
+  }
+  
+
+  .Skill_item {
+    width: 80px !important; /* 必要に応じて幅を調整 */
+  }
+
+  .Profile_Top {
+    display: block !important;
+  }
+  
+}
+
+
+
+/* モーダル内の映像コンテナ */
+.modalVideoContainer {
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalVideoContainer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ここから下のタブ機能 */
+.tabButtons {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  
+}
+
+.tabButtons span {
+  box-shadow: 3px -5px 10px rgba(0,0,0, 0.15); /* 影を追加 */
+  font: 400 30px "nikoleta", "nikoleta";
+  color: #ffffff;
+  border-radius: 12px 12px 0 0  ; /* タブ全体の角を丸くする */
+  background: #2c2c2c;
+  cursor: pointer;
+  border-bottom: 4px solid #3c3c3c;
+  display: block;
+  width: 50%;
+  text-align: center;
+  height: 40px;
+  line-height: 45px;
+  transition: background-color 0.3s ease;
+  shape-outside: margin-box;
+}
+
+.tabButtons span:hover {
+  background-color: #3c3c3c;
+  color: #fff;
+}
+
+.tabButtons .active {
+  background-color: #3c3c3c;
+  color: #fff;
+}
+
+/* ランプ */
+#lamp {
+  width: 50%;
+  height: 4px;
+  background: #ff4040;
+  position: absolute;
+  top: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+#lamp.photos {
+  left: 0;
+}
+
+#lamp.films {
+  left: 50%;
+}
+
+/* タブコンテンツ */
+.tabContent {
+  padding: px;
+}
+
+
+.Profile_Top {
+  display: flex;
+  justify-content: center; /* 水平方向に中央揃え */
+  text-align: center;
+  align-items: center; /* 垂直方向に中央揃え */
+  flex-direction: row; /* 子要素を横並びにする */
+  gap: 00px; /* 子要素間のスペースを追加 */
+  padding-bottom: 10px;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.ProfileTitle {
+  font-family: nikoleta;
+  font-size: 4rem;
+  margin-bottom: 0px;
+}
+.ProfileSubttitle {
+  font-weight: 300; /* 細字に設定 */
+  font-size: 1.0rem;
+  padding-bottom: 20px;
+}
+
+.Skill_Box{
+  justify-content: left; /* 水平方向に中央揃え */
+  text-align: center;
+  align-items: center; /* 垂直方向に中央揃え */
+  padding-bottom: 10px;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.Skill_list {
+  display: flex;
+
+  flex-wrap: wrap; /* 必要に応じて複数行対応 */
+  gap: 0px; /* 各スキル間のスペース */
+  justify-content: center; /* 子要素を中央揃え */
+}
+
+.Skill_item {
+  display: flex;
+  flex-direction: column; /* ロゴと文字を縦並びにする */
+  align-items: center; /* 中央揃え */
+  text-align: center; /* テキストを中央揃え */
+  width: 150px; /* 必要に応じて幅を調整 */
+}
+
+.Skill_item p {
+  margin-top: 15px; /* ロゴと文字の間にスペースを追加 */
+  font-size: 1.0rem; /* フォントサイズを調整 */
+  color: #ffffff; /* テキストの色を設定 */
+}
+
+.ul{
+  display: flex;
+  gap: 15px;
+  list-style: none; /* 箇条書き記号を非表示にする */
+  padding: 0; /* デフォルトのパディングを削除 */
+  margin: 0; /* デフォルトのマージンを削除 */
+  flex-wrap: wrap; /* 必要に応じて複数行対応 */
+}
+
+.Article_item {
+  display: flex;
+  background-color: #3c3c3c;
+  flex-direction: column; /* ロゴと文字を縦並びにする */
+  align-items: center; /* 中央揃え */
+  text-align: center; /* テキストを中央揃え */
+  width: 328px; /* 必要に応じて幅を調整 */
+  height: 400px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.Loading{
+  display: flex;
+  justify-content: center; /* 水平方向に中央揃え */
+  text-align: center;
+  align-items: center; /* 垂直方向に中央揃え */
+  flex-direction: row; /* 子要素を横並びにする */
+  gap: 20px; /* 子要素間のスペースを追加 */
+  padding-bottom: 10px;
+  max-width: 80%;
+  font-size: 20px;
+  margin: 0 auto;
+  margin-bottom: 1400px;
+}
+
+
+.articleContainer {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.ArticleBox{
+  justify-content: center; /* 水平方向に中央揃え */
+  text-align: center;
+  align-items: center; /* 垂直方向に中央揃え */
+  gap: 20px; /* 子要素間のスペースを追加 */
+  padding-bottom: 10px;
+  max-width: 95%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.Skill_Top{
+  gap: 20px;
+}
+
+
+.cp_tag01 {
+  list-style: none;
+  margin: 20px 0; /* 上下のマージンを追加 */
+  overflow: hidden;
+  width: 100%; ;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+.cp_tag01 li {
+	display: inline-block;
+}
+.cp_tag01 a {
+	line-height: 26px;
+	position: relative;
+	display: inline-block;
+	height: 26px;
+	margin: 0 10px 10px 0;
+	padding: 0 20px 0 23px;
+	-webkit-transition: color 0.2s;
+	        transition: color 0.2s;
+	text-decoration: none;
+	color: #455a64;
+	border-radius: 3px 0 0 3px;
+	background: #cfd8dc;
+}
+.cp_tag01 a::before, .cp_tag01 a::after {
+	background: #2c2c2c;/*背景色*/
+}
+.cp_tag01 a::before {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 6px;
+	height: 6px;
+	content: '';
+	border-radius: 10px;
+}
+.cp_tag01 a::after {
+	position: absolute;
+	top: -2px;
+	right: -6px;
+	width: 0;
+	height: 0;
+	content: '';
+	border-width: 15px 0 15px 8px;
+	border-style: solid;
+	border-color: transparent transparent transparent #cfd8dc;
+	border-radius: 4px;
+}
+.cp_tag01 a:hover {
+	color: #000000;
+	background-color: #cfd8dc;
+}
+.cp_tag01 a:hover:active {
+	border-left-color: #cfd8dc;
+}
+
+
+.cp_tag01 a.active {
+  color: #000000; /* テキスト色を白に変更 */
+  background-color: #ec407a; /* 背景色をオレンジに変更 */
+  font-weight: bold; /* 太字にする */
+}
+
+.cp_tag01 a.active::after {
+  border-left-color: #ec407a; /* 矢印の色を背景色と一致させる */
+}
+
+.blue-text {
+  color: blue;
+}
