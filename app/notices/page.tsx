@@ -7,7 +7,7 @@ type Notice = {
   publishedAt: string;
 };
 
-// 日付を "YYYY/MM/DD" 形式にフォーマットする関数
+
 function formatDate(dateString: string) {
   const date = new Date(dateString);
   const year = date.getFullYear();
@@ -18,7 +18,7 @@ function formatDate(dateString: string) {
 
 export default async function NoticeListPage() {
   try {
-    const data = await noticeClient.get({ endpoint: "blogs" }); // blogsエンドポイントで取得
+    const data = await noticeClient.get({ endpoint: "blogs" }); //こっちもblogsエンドポイント
     const notices: Notice[] = data.contents;
 
     return (
