@@ -68,11 +68,11 @@ export default async function Home() {
             <Image src="/chisato.png" alt="Chisato" width={1920} height={1080} style={{ width: '100%', height: 'auto' }} />
           </div>
           
-          {/* 新しいフッター */}
-          <footer className="site-footer">
+          <footer className="site-footer" aria-hidden="true" />
+          <div className="footer-foreground" role="contentinfo">
             <div className="footer-content">
               <div className="footer-info">
-                <Link href="/"><Image src="/logo2.svg" alt="logo2" width={400} height={200} style={{ width: '30%', height: 'auto', minWidth: '300px', color: '#000000' }} /></Link>
+                <Link href="/"><Image src="/logo2.svg" alt="logo2" width={400} height={200} style={{ width: '30%', height: 'auto', minWidth: '300px', color: '#ffffff' }} /></Link>
                 <h3>ホーム千郷</h3>
                 <p>活動拠点 : 〒441-1341 愛知県新城市杉山道目記24 西部公民館１階</p>
                 <p>Email: mail@homechisato.com</p>
@@ -84,7 +84,7 @@ export default async function Home() {
               </nav>
               <p className="copyright">&copy; 2025 ホーム千郷 All Rights Reserved.</p>
             </div>
-          </footer>
+          </div>
           
           <div className="Cloud">
             <Image src="/cloud.svg" alt="Cloud" width={1510} height={970} style={{ width: '100%', height: 'auto' }} />
@@ -92,7 +92,6 @@ export default async function Home() {
           <div className="Cloud2">
             <Image src="/cloud.svg" alt="Cloud" width={1510} height={970} style={{ width: '100%', height: 'auto' }} />
           </div>
-          <div style={{ paddingBottom: '50vh' }}></div>
         </div>
       </main>
     </div>

@@ -30,7 +30,7 @@
   height: auto; /* 高さを自動調整 */
   right: 0; /* 左端に配置 */
   bottom: -2100px; /* 上からの位置を調整 */
-  z-index: 3; // 星空と花火の前面
+  z-index: 300; // 星空と花火の前面
   transform: translateY(calc(-40% + var(--scroll-offset) * 0.3)); 
   overflow-x: hidden; /* 横スクロールを無効化 */
   overflow-y: auto; /* 縦スクロールは有効 */
@@ -97,35 +97,48 @@
   position: absolute;
   width: 100vw; /* 100%から100vwに変更してビューポート全体をカバー */
   left: 0; /* 左端を確実に0に固定 */
-  background-color: rgba(183,174,138,1);
-  color: #ffffff;
+  background-color: transparent;
+  z-index: auto !important;
+  transform: none;
   padding: 40px 0;
   bottom: -2250px;;
-  z-index: 4;
-  transform: translateY(calc(-40% + var(--scroll-offset) * 0.3));
   overflow-x: hidden; /* 横スクロールを無効化 */
 }
 
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(183,174,138,1);
+  z-index: 200; /* chisato(300)より低く */
+  transform: translateY(calc(-40% + var(--scroll-offset) * 0.3));
+  pointer-events: none; /* クリックを妨げない */
+}
+
 .footer-content {
+  z-index: 1000 !important;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
   color: #000000;
+  position: relative; /* z-index を有効にする */
 }
 
 .footer-info {
+  z-index: 1000 !important;
   margin-bottom: 30px;
+  position: relative; /* z-index を有効にする */
   
   h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #000000;
+    color: #ffffff;
   }
   
   p {
     margin: 5px 0;
-    color: #000000; /* #ecf0f1から#000000に変更 */
+    color: #ffffff; /* #ecf0f1から#000000に変更 */
   }
 }
 
@@ -136,12 +149,12 @@
   margin-bottom: 30px;
   
   a {
-    color: #000000; /* #ecf0f1から#000000に変更 */
+    color: #ffffff; /* #ecf0f1から#000000に変更 */
     text-decoration: none;
     transition: color 0.3s;
     
     &:hover {
-      color: #333333; /* ホバー時も暗めの色に変更 */
+      color: #999999; /* ホバー時も暗めの色に変更 */
     }
   }
 }
@@ -153,18 +166,18 @@
   margin-bottom: 20px;
   
   a {
-    color: #000000; /* #ecf0f1から#000000に変更 */
+    color: #ffffff; /* #ecf0f1から#000000に変更 */
     text-decoration: none;
     
     &:hover {
-      color: #333333; /* ホバー時も暗めの色に変更 */
+      color: #999999; /* ホバー時も暗めの色に変更 */
     }
   }
 }
 
 .copyright {
   font-size: 0.9rem;
-  color: #000000; /* #bdc3c7から#000000に変更 */
+  color: #ffffff; /* #bdc3c7から#000000に変更 */
   margin: 0;
 }
 
@@ -224,23 +237,11 @@ html, body {
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .chisato {
-    bottom: -2380px !important;
-  }
-
-    .Mt1 {
-    bottom: -1200px !important;
-}
-  .Mt2 {
-    bottom: -1600px !important;
-}
-  .site-footer {
-    bottom: -2750px !important; /* -2680px から -2580px に変更 */
-  }
-  
-  .footer-links {
-    color: #000000;
-    flex-direction: column;
-    gap: 15px;
-  }
+  /* パララックス完全停止＋Y座標固定 */
+  .Mt1 { transform: none !important; bottom: -2900px !important; will-change: auto !important; }
+  .Mt2 { transform: none !important; bottom: -2950px !important; will-change: auto !important; }
+  .Cloud { transform: none !important; bottom: 300px !important; will-change: auto !important; }
+  .Cloud2 { transform: none !important; bottom: -200px !important; will-change: auto !important; }
+  .chisato { transform: none !important; bottom: -3000px !important; will-change: auto !important; }
+    .site-fo { transform: none !important; bottom: -3000px !important; will-change: auto !important; }
 }

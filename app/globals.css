@@ -66,6 +66,7 @@ header, footer {
 
 .footer-icons a {
   margin: 0 20px;
+  z-index: 1000 !important;
   display: inline-block;
 }
 
@@ -77,7 +78,7 @@ header, footer {
   width: 90vh;
   min-width: 300px;
   max-width: 90%;
-  z-index: 10;
+  z-index: 1000;
   text-align: center;
 }
 
