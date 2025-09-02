@@ -10,12 +10,29 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+
+  /* --- vw対策: 視覚ビューポート基準に固定し、外部のはみ出しの影響を遮断 --- */
+  inline-size: 100dvw;           /* 動的ビューポート幅 */
+  max-inline-size: 100svw;       /* 最小ビューポート幅にフォールバック */
+  left: 0 !important;
+  right: auto !important;
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0));
+  box-sizing: border-box;
+  padding-inline: max(1rem, env(safe-area-inset-left, 0)) max(1rem, env(safe-area-inset-right, 0));
+  overflow-x: clip;              /* 横方向を強制クリップ */
+  overflow-y: visible;           /* 下方向にメニューを描画可能に */
+  contain: layout;               /* レイアウト分離のみ維持（描画はクリップしない） */
+  isolation: isolate;            /* 合成分離 */
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
   width: 100%;
+
+  max-inline-size: 100%;         /* 内部もはみ出さない */
+  box-sizing: border-box;
+  overflow: visible;             /* クリップせず、子の absolute を許可 */
 }
 
 .navbar-logo {
@@ -35,6 +52,15 @@
   display: none;
   position: absolute;
   right: 40px; /* 右から20pxに固定 */
+
+  /* モバイル時はトグルをフレックス右寄せにし、絶対配置を打ち消す */
+  @media (max-width: 768px) {
+    display: block;
+    position: relative !important;
+    right: auto !important;
+    margin-left: auto !important; /* フレックス右端へ */
+    z-index: 1001;
+  }
 }
 
 .navbar-menu {
@@ -73,6 +99,8 @@
     left: 0;
     width: 100%;
     padding: 1rem 0;
+    z-index: 1001;               /* 前面に */
+    background: rgba(255,255,255,0.3); /* 背景を敷いて重なりを明確化 */
   }
 
   .navbar-menu.open {

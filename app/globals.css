@@ -63,14 +63,7 @@ header, footer {
   padding: 1rem;
   text-align: center;
 }
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  background: rgba(0,0,0,0.3);
-  border-radius: 8px;
-  justify-content: center;
-}
+
 .footer-icons a {
   margin: 0 20px;
   display: inline-block;
@@ -225,7 +218,18 @@ header, footer {
   .header-content { font-size: 15px; }
 }
 @media (max-width: 768px) {
-  .about-content { flex-direction: column; align-items: center; text-align: center; }
-  .about-description-container { align-items: center; text-align: center; }
-  .footer-content { max-width: 1920px; margin: 0 auto; padding: 0 1rem; background: rgba(0,0,0,0.0); border-radius: 8px; }
+  .about-content {
+    flex-direction: column;
+  }
+}
+
+/* --- 背景オブジェクトラッパー --- */
+.background-objects-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
