@@ -30,7 +30,7 @@
   height: auto; /* 高さを自動調整 */
   right: 0; /* 左端に配置 */
   bottom: -2100px; /* 上からの位置を調整 */
-  z-index: 300; // 星空と花火の前面
+  z-index: 3; // 星空と花火の前面
   transform: translateY(calc(-40% + var(--scroll-offset) * 0.3)); 
   overflow-x: hidden; /* 横スクロールを無効化 */
   overflow-y: auto; /* 縦スクロールは有効 */
