@@ -67,6 +67,9 @@ export default function HomeSections({ newsArticles, notices }: Props) {
             <div className="description">
               愛知県新城市のちさと館で，中学生がアイデアの主体となり，皆がそれを積極的に支援することで，若者の視点や力で地域の魅力を創出することを目指します． 地域イベントやワークショップの手伝い，企画やデザイン，SNSの運用，個々の得意を活かした取り組みを行います．
             </div>
+            <div className="about-foot-description">
+              「欲しい未来は，自分たちで創る」
+            </div>
           </div>
         </div>
       </div>

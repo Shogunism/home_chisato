@@ -106,7 +106,7 @@
 
 .more-link:hover {
   background-color: #555;
-  color: #fff !important;
+  color: #fff ;
 }
 
 /* レスポンシブ対応 */

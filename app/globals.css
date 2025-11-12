@@ -66,7 +66,6 @@ header, footer {
 
 .footer-icons a {
   margin: 0 20px;
-  z-index: 1000 !important;
   display: inline-block;
 }
 
@@ -78,7 +77,7 @@ header, footer {
   width: 90vh;
   min-width: 300px;
   max-width: 90%;
-  z-index: 1000;
+  z-index: 10;
   text-align: center;
 }
 
@@ -125,9 +124,10 @@ header, footer {
   justify-content: center;
   align-items: flex-start;
   flex: 1 1 300px;
-  text-align: left;
   color: #000;
-  gap: 100px;
+
+    text-align: left !important;
+
 }
 .about-description {
   margin-top: 50px;
@@ -135,10 +135,23 @@ header, footer {
   line-height: 1.6;
   word-break: break-word;
   overflow-wrap: break-word;
+  margin-bottom: 100px;
+
 }
+
+.about-foot-description {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: 50px;
+  text-align: right !important;
+}
+
 .description {
   font-size: 1.2rem;
   line-height: 1.6;
+  margin-bottom: 30px;
 }
 
 
