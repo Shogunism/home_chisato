@@ -34,6 +34,29 @@ Next.js で作っているホーム千郷のサイトです。NEWS と NOTICE �
 - 本文中の `[ページ名]` は、そのページもサイトに公開されていればサイト内リンクになります。公開されていなければ文字だけが表示されます
 - Cosense での変更は **5 分ほどで** サイトに反映されます（ISR）
 
+### 記事テンプレート（UserScript）
+
+Cosense のページメニューに「記事を作る」ボタンを追加する UserScript を用意しています。
+ボタンから NEWS 記事・NOTICE・練習用ページをテンプレートで作れます。
+
+- NEWS / NOTICE は `#draft` 付きで作られるので、書きかけが公開されることはありません。
+  書き終わったら `#draft` を消すと公開されます
+- 練習用ページには `#publish` が付かないので、サイトには載りません
+
+**準備（管理者が 1 回だけ）**: [docs/cosense/article-template-page.txt](./docs/cosense/article-template-page.txt)
+の中身を、Cosense に `記事テンプレート` というタイトルの新しいページを作って丸ごと貼り付ける。
+
+**使う人（各自 1 回だけ）**: 自分のユーザー名のページに次の 2 行を書いて再読み込みし、
+UserScript を有効にするか聞かれたら許可する。
+
+```
+code:script.js
+ import '/api/code/home-chisato/記事テンプレート/script.js';
+```
+
+スクリプトを直すときは [docs/cosense/article-template.js](./docs/cosense/article-template.js) と
+Cosense の `記事テンプレート` ページの両方をそろえてください。
+
 ## 仕組み
 
 - `libs/cosense.ts` — Cosense の公開 API から記事を取得し、公開ルールで絞り込む
