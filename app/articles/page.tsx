@@ -1,24 +1,14 @@
-
 import Link from "next/link";
 import Image from "next/image";
-import { newsClient } from "@/libs/client";
+import { getPosts } from "@/libs/cosense";
 import "../article-preview.css";
 
-type Article = {
-  id: string;
-  title: string;
-  publishedAt: string;
-  eyecatch?: {
-    url: string;
-    width?: number;
-    height?: number;
-  };
-};
+// Cosense の更新を 5 分ごとに取り込む（libs/cosense.ts の REVALIDATE_SECONDS と揃える）
+export const revalidate = 300;
 
 export default async function ArticleListPage() {
   try {
-    const data = await newsClient.get({ endpoint: "blogs" });
-    const articles: Article[] = data.contents;
+    const articles = await getPosts("news");
 
     return (
       <>
@@ -34,6 +24,7 @@ export default async function ArticleListPage() {
                       alt=""
                       width={288}
                       height={162}
+                      unoptimized
                       style={{ objectFit: "cover" }}
                     />
                   ) : (

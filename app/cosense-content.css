@@ -1,0 +1,146 @@
+/* Cosense から取得した記事本文（app/components/CosenseContent.tsx） */
+
+.cosense-date {
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 24px;
+}
+
+.cosense-content {
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.cosense-content .cs-line {
+  min-height: 1.8em;
+}
+
+.cosense-content .cs-blank {
+  height: 1em;
+}
+
+.cosense-content .cs-li {
+  position: relative;
+}
+
+.cosense-content .cs-li::before {
+  content: "";
+  position: absolute;
+  left: -0.9em;
+  top: 0.75em;
+  width: 0.35em;
+  height: 0.35em;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.cosense-content .cs-heading {
+  margin: 1.4em 0 0.6em;
+  line-height: 1.4;
+}
+
+.cosense-content .cs-image {
+  display: block;
+  max-width: 80%;
+  max-height: 600px;
+  height: auto;
+  margin: 12px auto;
+}
+
+.cosense-content .cs-image-strong {
+  max-width: 100%;
+}
+
+.cosense-content .cs-icon {
+  display: inline-block;
+  height: 1.3em;
+  width: auto;
+  vertical-align: middle;
+}
+
+.cosense-content .cs-icon-strong {
+  height: 3em;
+}
+
+.cosense-content a {
+  color: #1a5fb4;
+  text-decoration: underline;
+}
+
+.cosense-content .cs-tag {
+  color: #555;
+  margin-right: 0.4em;
+}
+
+.cosense-content .cs-quote {
+  margin: 0;
+  padding: 2px 12px;
+  border-left: 4px solid rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.cosense-content .cs-inline-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.cosense-content .cs-code {
+  margin: 8px 0;
+}
+
+.cosense-content .cs-code-name {
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 2px 8px;
+  background: #ddd;
+  border-radius: 4px 4px 0 0;
+}
+
+.cosense-content .cs-code pre {
+  margin: 0;
+  padding: 12px;
+  overflow-x: auto;
+  background: #f5f5f5;
+  border-radius: 0 4px 4px 4px;
+}
+
+.cosense-content .cs-table {
+  margin: 8px 0;
+  overflow-x: auto;
+}
+
+.cosense-content .cs-table table {
+  border-collapse: collapse;
+}
+
+.cosense-content .cs-table td {
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+}
+
+.cosense-content .cs-embed {
+  position: relative;
+  width: 80%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  margin: 12px auto;
+}
+
+.cosense-content .cs-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .cosense-content .cs-image,
+  .cosense-content .cs-embed {
+    max-width: 100%;
+    width: 100%;
+  }
+}
