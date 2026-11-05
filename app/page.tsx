@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { newsClient, noticeClient } from './libs/client';
+import { getPosts } from '@/libs/cosense';
 import HomeSections from './components/HomeSections';
 import ScrollEventSetter from './components/ScrollEventSetter';
 import './mountain.scss';
@@ -22,16 +22,22 @@ export type Notice = {
   publishedAt: string;
 };
 
-
-  
+// Cosense の更新を 5 分ごとに取り込む（libs/cosense.ts の REVALIDATE_SECONDS と揃える）
+export const revalidate = 300;
 
 export default async function Home() {
-  // サーバーサイドでNEWSとNOTICEを取得
-  const newsData = await newsClient.get({ endpoint: "blogs", queries: { limit: 5 } });
-  const newsArticles: Article[] = newsData.contents;
-
-  const noticeData = await noticeClient.get({ endpoint: "blogs", queries: { limit: 5 } });
-  const notices: Notice[] = noticeData.contents;
+  // サーバーサイドでNEWSとNOTICEを Cosense から取得
+  const newsArticles: Article[] = (await getPosts("news", 5)).map(({ id, title, publishedAt, eyecatch }) => ({
+    id,
+    title,
+    publishedAt,
+    eyecatch,
+  }));
+  const notices: Notice[] = (await getPosts("notice", 5)).map(({ id, title, publishedAt }) => ({
+    id,
+    title,
+    publishedAt,
+  }));
 
   return (
     <div>

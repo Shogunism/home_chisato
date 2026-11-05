@@ -1,39 +1,21 @@
-import { newsClient } from "@/libs/client";
-import BlogContent from "./BlogContent";
 import { notFound } from "next/navigation";
+import { getPost } from "@/libs/cosense";
+import ArticleView from "@/app/components/ArticleView";
 
-type Article = {
-  id: string;
-  title: string;
-  eyecatch?: {
-    url: string;
-    width: number;
-    height: number;
-  };
-  content: string;
-};
+// Cosense の更新を 5 分ごとに取り込む（libs/cosense.ts の REVALIDATE_SECONDS と揃える）
+export const revalidate = 300;
 
 interface PageProps {
-  params: Promise<{
-    id: string;
-  }>;
+  params: Promise<{ id: string }>;
 }
 
 export default async function ArticleDetailPage({ params }: PageProps) {
-  const resolvedParams = await params; // Promiseを解決
-  try {
-    const data: Article = await newsClient.get({
-      endpoint: "blogs",
-      contentId: resolvedParams.id,
-    });
-    return (
-      <div>
-        <BlogContent blog={data} />
-      </div>
-    );
-  } catch (error) {
-    console.error("Error fetching article:", error);
-    notFound();
-  }
+  const { id } = await params;
+  const post = await getPost("news", id);
+  if (!post) notFound();
+  return (
+    <div>
+      <ArticleView post={post} />
+    </div>
+  );
 }
-
